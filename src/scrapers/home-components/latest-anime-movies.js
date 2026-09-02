@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const URL = "https://animesalt.top"; // replace with actual page URL
+const URL = "https://animesalt.cx"; // replace with actual page URL
 
 async function scrapeAnimeMovies() {
   try {
@@ -16,7 +16,7 @@ async function scrapeAnimeMovies() {
       // Only Anime Movies
       if (li.hasClass("type-movies") && li.hasClass("category-anime")) {
         const title = li.find("img").attr("alt")?.trim().replace("Image ", "") || null;
-        const anime_id = li.find(".lnk-blk").attr("href").replace("https://animesalt.ac/movies/", "").replace("/", "");
+        const anime_id = li.find(".lnk-blk").attr("href").replace("https://animesalt.cx/movies/", "").replace("/", "");
         const poster = li.find("img").attr("data-src")
           ? "https:" + li.find("img").attr("data-src")
           : null;

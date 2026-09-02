@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const URL = "https://animesalt.top"; // replace with actual URL
+const URL = "https://animesalt.cx"; // replace with actual URL
 
 async function scrapeLatestSeries() {
   try {
@@ -14,7 +14,7 @@ async function scrapeLatestSeries() {
       const li = $(el).find("li");
       if (!li.hasClass("series")) return; // skip if not a series
 
-      const anime_id = li.find(".lnk-blk").attr("href").replace("https://animesalt.ac/series/","").replaceAll("/","");
+      const anime_id = li.find(".lnk-blk").attr("href").replace("https://animesalt.cx/series/","").replaceAll("/","");
       const poster = "https:" + li.find("img").attr("data-src");
       const title = li.find("img").attr("alt").replace("Image ","");
 

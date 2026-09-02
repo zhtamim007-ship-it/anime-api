@@ -9,7 +9,7 @@ const moviesScraper = async (page = 1) => {
     const anime = []
     $("li.movies").each((_, el) => {
         const title = $(el).find("h2.entry-title").text().trim()
-        const anime_id = $(el).find("a.lnk-blk").attr("href").replace("https://toonstream.dad/movies/", "").replace("/", "")
+        const anime_id = $(el).find("a.lnk-blk").attr("href").replace("https://animesalt.cx/movies/", "").replace("/", "")
         const imgTag = $(el).find("img");
 
             let poster =
